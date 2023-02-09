@@ -22,11 +22,15 @@ const TodoInput = (props) => {
 
   }
 
+  const ValidityHandler = () => {
+    setIsValid(true)
+  }
+
   return (
     <form id = 'myForm' onSubmit ={formSubmitHandler} >
       <div className={`${classes['form-control']} ${!isValid && classes.invalid}`}>
         <label> Add your Task </label>
-        <input ref={EnteredInput} type="text"></input>
+        <input ref={EnteredInput} onChange={ValidityHandler} type="text"></input>
       </div>
       <div className={classes.button}>
         <Button type='submit'> Add </Button>
